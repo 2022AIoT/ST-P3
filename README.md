@@ -112,13 +112,13 @@ bash scripts/train_plan.sh ${configs} ${dataroot} ${pretrained}
 
 - nuScenes数据集可视化结果
 
-![alt text](.\images\nuScenes.png)<br/>
+![nuScenes](.\images\nuScenes.png)<br/>
 
 - CARLA模拟器可视化结果
 
-  ![alt text](.\images\carla.png)<br/>
+  ![carla](.\images\carla.png)<br/>
 
-  ![alt text](.\images\carla_agent.gif)
+  ![carla_agent](.\images\carla_agent.gif)
 
 ## 引用
 
