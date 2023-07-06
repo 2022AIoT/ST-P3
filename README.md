@@ -24,9 +24,24 @@ git clone https://github.com/OpenPerceptionX/ST-P3.git
 
 ### 测试阶段
 
+##### 数据集构建：
+
+下载Full dataset(v1.0)的Trainval与Test（或者下载mini数据集）
+
+将所有数据整合成两个文件夹即samples和sweeps（mini数据集包含map文件夹）
+
+然后下载数据集的CAN bus expansion和Map expansion加入到数据文件夹中
+
+can_bus与samples和sweeps并列放置
+
+map_expansion需要加入到map文件夹中
+
+mini数据集还需将v1.0-mini改名为v1.0-trainval
+
+![alt text](./images/dataset.png)
+
 为了在nuScenes数据集上测试该模型：
 
--  下载[nuScenes](https://www.nuscenes.org/download)数据集；
 -  下载预训练权重。
 
 ```
@@ -36,7 +51,14 @@ bash scripts/eval_plan.sh ${checkpoint} ${dataroot}
 为了在Carla模拟器上测试该模型：
 
 - 请参考[Transfuser](https://github.com/autonomousvision/transfuser)来创建并配置相关实验环境；
+
+需要将transfuser里的leaderboard文件夹和scenario_runner文件复制到ST-P3-main文件夹下
+
+还需要将transfuser里的team_code_autopilot文件夹复制，并重命名为team_code， 找到文件夹里的nav_planner.py重命名为planner.py，carla_agent.py的配置才算完成。（注：这一步可能存在问题，因为我们尚不清楚其无法正确运行的原因）
+
 - 使用 `carla_agent.py` 文件以及下载好的预训练权重来测试。
+
+这一步需要修改transfuser里的datagen.sh的设置，具体情况为修改data_agent.py修改为本文的carla_agent.py
 
 
 ### 训练阶段
@@ -112,21 +134,12 @@ bash scripts/train_plan.sh ${configs} ${dataroot} ${pretrained}
 
 - nuScenes数据集可视化结果
 
-![nuScenes](./images/nuScenes.png)
+![alt text](.\images\nuScenes.png)<br/>
 
 - CARLA模拟器可视化结果
 
-  ![carla](./images/carla.png)
+  ![alt text](.\images\carla.png)<br/>
 
-  ![carla_agent](./images/carla_agent.gif)
+  ![alt text](.\images\carla_agent.gif)
 
 ## 引用
-
-```
-@inproceedings{hu2022stp3,
- title={ST-P3: End-to-end Vision-based Autonomous Driving via Spatial-Temporal Feature Learning}, 
- author={Shengchao Hu and Li Chen and Penghao Wu and Hongyang Li and Junchi Yan and Dacheng Tao},
- booktitle={European Conference on Computer Vision (ECCV)},
- year={2022}
-}
-```
