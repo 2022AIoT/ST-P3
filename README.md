@@ -38,7 +38,7 @@ map_expansion需要加入到map文件夹中
 
 mini数据集还需将v1.0-mini改名为v1.0-trainval
 
-![alt text](./images/dataset.png)
+![alt text](./images/dataset.jpg)
 
 为了在nuScenes数据集上测试该模型：
 
