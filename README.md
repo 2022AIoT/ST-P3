@@ -143,3 +143,9 @@ bash scripts/train_plan.sh ${configs} ${dataroot} ${pretrained}
   ![alt text](./images/carla_agent.gif)
 
 ## 引用
+@inproceedings{hu2022stp3,
+ title={ST-P3: End-to-end Vision-based Autonomous Driving via Spatial-Temporal Feature Learning}, 
+ author={Shengchao Hu and Li Chen and Penghao Wu and Hongyang Li and Junchi Yan and Dacheng Tao},
+ booktitle={European Conference on Computer Vision (ECCV)},
+ year={2022}
+}
