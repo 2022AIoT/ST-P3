@@ -75,7 +75,7 @@ bash scripts/train_plan.sh ${configs} ${dataroot} ${pretrained}
 ```
 
 - 要在nuScenes数据集上从头开始训练模型，建议首先训练感知模块的权重，然后用它来训练后续任务，以防止训练期间出现`nan`报错。
-- 如果想要使用nuScenes数据集的深度数据**（即将发布）**，请将深度数据文件夹放入`dataroot`目录中，并将配置文件中的`GT_DEPTH`更改为`True`。
+- 如果想要使用nuScenes数据集的深度数据（**即将发布**），请将深度数据文件夹放入`dataroot`目录中，并将配置文件中的`GT_DEPTH`更改为`True`。
 
 ## 性能评估基准
 
